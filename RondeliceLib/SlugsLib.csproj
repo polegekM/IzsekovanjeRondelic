@@ -7,8 +7,8 @@
     <ProjectGuid>{8FFE4971-BC64-421D-A43E-CE9D93A7C933}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RondeliceLib</RootNamespace>
-    <AssemblyName>RondeliceLib</AssemblyName>
+    <RootNamespace>SlugsLib</RootNamespace>
+    <AssemblyName>SlugsLib</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -44,7 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Cell.cs" />
+    <Compile Include="Common\CommonMethods.cs" />
+    <Compile Include="CoordinateSystem.cs" />
+    <Compile Include="PlaneTape.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,161 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="Web.MasterPage.Main" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0" />
+    <title></title>
+
+    <%--<link rel="shortcut icon" type="image/x-icon" href="" />--%>
+
+    <%--<link rel="stylesheet" href="~/Styles/MediaQuery.css" />
+    <link rel="stylesheet" href="~/Styles/Content.css" />
+    <link rel="stylesheet" href="~/Styles/UserControls.css" />
+    <link rel="stylesheet" href="~/Styles/bootstrap-toggle.min.css" />
+    <link rel="stylesheet" href="~/Styles/FontAwsome/all.css" />--%>
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <script src='<%= ResolveUrl("~/Scripts/Common.js") %>'></script>
+    <form id="form1" runat="server">
+        <div class="container-fluid pl-0 pr-0">
+
+            <header style="background-color: #fff;">
+                <div class="row d-flex m-0 align-items-center p-1" style="box-shadow: 0px 7px 10px #e1e1e1;">
+                    <div class="col-sm-6 d-flex">
+                        <dx:ASPxHeadline ID="PageHeadline" runat="server" Font-Size="22px" Font-Italic="true" Font-Bold="true" HeaderStyle-ForeColor="#9FA5B6" CssClass="page-headline" />
+                    </div>
+                    <div class="col-sm-6 d-flex justify-content-end">
+                        <div class="row p-2 d-flex align-items-center justify-content-end w-100">
+                            <div class="col-5 pl-1 text-right d-none d-lg-block">
+                                <div class="dropdown show">
+                                    <a class="dropdown-toggle p-0" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        style="background-color: transparent;">
+                                        <span runat="server" id="nameInitial" style="background-color: #267BFF; font-size: 20px; font-weight: 500; padding: 5px 11px; border-radius: 10px; color: #F7F9FF;">M</span>
+                                        <span class="text-uppercase ml-2">
+                                            <dx:ASPxLabel runat="server" ID="lblLogin" Font-Bold="true" ForeColor="#9FA5B6" CssClass="login-lbl" />
+                                        </span>
+                                    </a>
+
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                                        <a class="dropdown-item" href="#">Prijava: <strong class="font-italic" id="RoleName" runat="server"></strong></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <section>
+                <div class="row">
+                    <div class="col">
+                        <dx:ASPxPanel ID="ASPxPanelMenu" Width="270px" runat="server" FixedPosition="WindowLeft" FixedPositionOverlap="true" Collapsible="true"
+                            BackColor="#f1f1f1" ScrollBars="Auto" ClientInstanceName="clientASPxPanelMenu">
+                            <SettingsAdaptivity CollapseAtWindowInnerWidth="1500" />
+                            <Images>
+                                <ExpandButtonArrowRight Width="37px" Height="37px">
+                                </ExpandButtonArrowRight>
+                            </Images>
+                            <Styles>
+                                <ExpandBar BackColor="#2A2A2A" Width="42px">
+                                </ExpandBar>
+                                <ExpandedExpandBar BackColor="#414B5F">
+                                </ExpandedExpandBar>
+                                <ExpandButton BackColor="#1279c0">
+                                </ExpandButton>
+
+                            </Styles>
+                            <SettingsCollapsing ExpandEffect="Slide">
+                                <ExpandButton GlyphType="Strips" Position="Far" />
+                            </SettingsCollapsing>
+                            <Paddings Padding="0px" />
+                            <PanelCollection>
+                                <dx:PanelContent>
+                                    <div class="text-center" style="padding-top: 19px; padding-bottom: 16px;">
+                                        <%-- border-bottom:1px solid rgba(255,255,255,0.5) --%>
+                                        <img src="http://www.judoklubimpol.si/wp-content/uploads/2017/12/impolLogo-300x191.png" width="180" height="50" class="img-fluid" alt="no-image" />
+                                    </div>
+                                    <div class="navbar-wrap">
+                                        <dx:ASPxNavBar ID="NavBarMainMenu" runat="server" Theme="iOS" AutoCollapse="false" EncodeHtml="False" AllowSelectItem="True"
+                                            EnableAnimation="true" Width="100%" BackColor="Transparent" Border-BorderStyle="None" BorderLeft-BorderColor="Yellow"
+                                            EnableHotTrack="true" ShowGroupHeaders="false">
+                                            <Groups>
+                                                <dx:NavBarGroup Text="Small Items">
+                                                    <Items>
+                                                        <dx:NavBarItem Text="Domov">
+                                                        </dx:NavBarItem>
+                                                        <dx:NavBarItem Text="Nov izračun">
+                                                        </dx:NavBarItem>
+                                                        <dx:NavBarItem Text="Pregled izračunov" NavigateUrl="../SlugsTable.aspx">
+                                                        </dx:NavBarItem>
+                                                    </Items>
+                                                </dx:NavBarGroup>
+                                            </Groups>
+                                        </dx:ASPxNavBar>
+                                    </div>
+                                    <div class="row mb-lg-5 mt-5 sign-out-btn m-0 justify-content-center">
+                                        <div class="col-10 p-0 text-center">
+                                            <dx:ASPxButton ID="btnSignOut" Width="60%" runat="server" RenderMode="Link" AutoPostBack="false" Text="ODJAVI SE"
+                                                CssClass="menu-action-button" OnClick="btnSignOut_Click" ForeColor="#F7F9FF">
+                                                <HoverStyle CssClass="menu-action-button-hover" />
+                                            </dx:ASPxButton>
+                                        </div>
+                                    </div>
+                                </dx:PanelContent>
+                            </PanelCollection>
+                        </dx:ASPxPanel>
+                    </div>
+                </div>
+            </section>
+
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolderMain" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+
+            <dx:ASPxLoadingPanel ID="LoadingPanel" runat="server" ClientInstanceName="LoadingPanel" Text="" Modal="true">
+            </dx:ASPxLoadingPanel>
+
+            <footer style="padding: 10px 5px; background-color: #fff; position: absolute; right: 0; bottom: 0; left: 0; text-align: center;">
+                Copyright © 2020 <span style="color: #3C8DBC"></span>
+            </footer>
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="infoModalTitle"></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body" id="infoModalMessage">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Zapri</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</body>
+</html>

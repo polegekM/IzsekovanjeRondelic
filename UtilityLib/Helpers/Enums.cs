@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RondeliceLib
+namespace UtilityLib.Helpers
 {
-    public class Class1
+    public class Enums
     {
+        public enum RequestHeader
+        {
+            UserToken
+        }
     }
 }

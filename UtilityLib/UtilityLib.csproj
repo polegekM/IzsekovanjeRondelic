@@ -47,7 +47,9 @@
   <ItemGroup>
     <Compile Include="Exceptions\UserCredentialsException.cs" />
     <Compile Include="Helpers\CommonMethods.cs" />
+    <Compile Include="Helpers\Enums.cs" />
     <Compile Include="Helpers\ExceptionValidationHelper.cs" />
+    <Compile Include="Helpers\UserPrincipal.cs" />
     <Compile Include="Models\Product\ProductModel.cs" />
     <Compile Include="Models\ResponseAPIModel.cs" />
     <Compile Include="Models\User\UserModel.cs" />

@@ -10,6 +10,34 @@ namespace UtilityLib.Helpers
 {
     public static class CommonMethods
     {
+        public static int ParseInt(object value)
+        {
+            int num = 0;
+            if (value != null)
+                int.TryParse(value.ToString(), out num);
+
+            return num;
+        }
+
+        public static double ParseDouble(object param)
+        {
+            double num = 0;
+            if (param != null)
+            {
+                double.TryParse(param.ToString(), out num);
+
+                if (num < 0)
+                    num = 0;
+            }
+
+            return num;
+        }
+
+        public static string Trim(string sTrim)
+        {
+            return String.IsNullOrEmpty(sTrim) ? "" : sTrim.Trim();
+        }
+
         public static string Base64Encode(string plainText)
         {
             var plainTextBytes = Encoding.UTF8.GetBytes(plainText);

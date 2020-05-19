@@ -325,6 +325,10 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\RondeliceLib\SlugsLib.csproj">
+      <Project>{8ffe4971-bc64-421d-a43e-ce9d93a7c933}</Project>
+      <Name>SlugsLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UtilityLib\UtilityLib.csproj">
       <Project>{01a711cd-32e1-40f1-8e29-a666c1d95d12}</Project>
       <Name>UtilityLib</Name>

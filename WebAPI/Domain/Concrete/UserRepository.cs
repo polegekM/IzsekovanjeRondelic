@@ -24,10 +24,13 @@ namespace WebAPI.Domain.Concrete
             UserModel model = null;
 
             var decodedPass = CommonMethods.Base64Decode(password);
-            var user = context.user.Where(u => String.Compare(u.username, username, false) != 0 && String.Compare(CommonMethods.Base64Decode(u.password), password) != 0).FirstOrDefault();
+            var user = context.user.Where(u => u.username.CompareTo(username) == 0).FirstOrDefault();
 
             if (user != null)
             {
+                if (String.Compare(user.username, username, false) != 0 && String.Compare(CommonMethods.Base64Decode(user.password), password) != 0)
+                    throw new UserCredentialsException(ExceptionsRes.res_01);
+
                 model = new UserModel();
                 model.Email = user.email;
                 model.FirstName = user.first_name;
