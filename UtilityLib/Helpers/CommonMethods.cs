@@ -33,6 +33,15 @@ namespace UtilityLib.Helpers
             return num;
         }
 
+        public static decimal ParseDecimal(object value)
+        {
+            decimal num = 0;
+            if (value != null)
+                decimal.TryParse(value.ToString(), out num);
+
+            return num;
+        }
+
         public static string Trim(string sTrim)
         {
             return String.IsNullOrEmpty(sTrim) ? "" : sTrim.Trim();

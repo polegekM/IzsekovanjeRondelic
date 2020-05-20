@@ -9,7 +9,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
     <div class="px-1">
-        <dx:ASPxGridView ID="GridViewSlugs" runat="server" Width="100%" KeyFieldName="product_id" OnDataBinding="GridViewSlugs_DataBinding"
+        <dx:ASPxGridView ID="GridViewSlugs" runat="server" Width="100%" KeyFieldName="ProductId" OnDataBinding="GridViewSlugs_DataBinding"
             CssClass="gridview-no-header-padding" EnableRowsCache="false" AutoGenerateColumns="False" ClientInstanceName="gridSlugs">
             <Paddings Padding="0" />
             <Settings ShowVerticalScrollBar="True"
@@ -29,19 +29,20 @@
             <SettingsText EmptyDataRow="Trenutno ni podatka o izračunih rondelic. Dodaj novega." />
 
             <Columns>
-                <dx:GridViewDataTextColumn Caption="Šifra" FieldName="code" Width="10%" />
-                <dx:GridViewDataTextColumn Caption="Naziv" FieldName="name" Width="20%" />
-                <dx:GridViewDataTextColumn Caption="Širia traku" FieldName="width" Width="10%" />
-                <dx:GridViewDataTextColumn Caption="Dolžin traku" FieldName="length" Width="10%" />
-                <dx:GridViewDataTextColumn Caption="Robovi ob dolžini" FieldName="edge_length" Width="10%" />
-                <dx:GridViewDataTextColumn Caption="Robovi ob širini" FieldName="edge_width" Width="10%" />
-                <dx:GridViewDataTextColumn Caption="Min. razd. med rondelicami" FieldName="min_distance_item" Width="10%" />
-                <dx:GridViewDataTextColumn Caption="Polmer" FieldName="radius" Width="10%" />
-                <dx:GridViewDataTextColumn Caption="Vsota rondelic" FieldName="items_sum" Width="10%" />
-                <dx:GridViewDataDateColumn Caption="Datum" FieldName="ts" Width="10%">
+                <dx:GridViewDataTextColumn Caption="Šifra" FieldName="Code" Width="10%" />
+                <dx:GridViewDataTextColumn Caption="Naziv" FieldName="Name" Width="20%" />
+                <dx:GridViewDataTextColumn Caption="Širina" FieldName="Width" Width="10%" />
+                <dx:GridViewDataTextColumn Caption="Dolžina" FieldName="Length" Width="10%" />
+                <dx:GridViewDataTextColumn Caption="Robovi ob dolžini" FieldName="EdgeLength" Width="10%" />
+                <dx:GridViewDataTextColumn Caption="Robovi ob širini" FieldName="EdgeWidth" Width="10%" />
+                <dx:GridViewDataTextColumn Caption="Min. razd. med rondelicami" FieldName="MinDistanceItem" Width="10%" />
+                <dx:GridViewDataTextColumn Caption="Polmer" FieldName="Radius" Width="10%" />
+                <dx:GridViewDataTextColumn Caption="Vsota rondelic" FieldName="ItemsSum" Width="10%" />
+                <dx:GridViewDataDateColumn Caption="Datum" FieldName="InsertDate" Width="10%">
                     <PropertiesDateEdit DisplayFormatString="dd. MMMM yyyy" />
                 </dx:GridViewDataDateColumn>
                 <dx:GridViewDataTextColumn Caption="Izračun izdelal" Width="10%">
+                    <Settings ShowFilterRowMenu="True" />
                     <DataItemTemplate>
                         <%# Eval("User.FirstName") %> <%# Eval("User.LastName") %>
                     </DataItemTemplate>

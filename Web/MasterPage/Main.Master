@@ -10,12 +10,7 @@
 
     <%--<link rel="shortcut icon" type="image/x-icon" href="" />--%>
 
-    <%--<link rel="stylesheet" href="~/Styles/MediaQuery.css" />
-    <link rel="stylesheet" href="~/Styles/Content.css" />
-    <link rel="stylesheet" href="~/Styles/UserControls.css" />
-    <link rel="stylesheet" href="~/Styles/bootstrap-toggle.min.css" />
-    <link rel="stylesheet" href="~/Styles/FontAwsome/all.css" />--%>
-
+    <link rel="stylesheet" href="~/Style/Content.css" />
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -52,7 +47,12 @@
                                     </a>
 
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                                        <a class="dropdown-item" href="#">Prijava: <strong class="font-italic" id="RoleName" runat="server"></strong></a>
+                                        <div class="dropdown-item p-2">
+                                             <dx:ASPxButton ID="btnDropdownSignOut" Width="60%" runat="server" RenderMode="Link" AutoPostBack="false" Text="Odjavi se"
+                                                OnClick="btnSignOut_Click" ForeColor="Black">
+                                            </dx:ASPxButton>
+                                        </div>
+                                       
                                     </div>
                                 </div>
                             </div>
@@ -97,9 +97,9 @@
                                             <Groups>
                                                 <dx:NavBarGroup Text="Small Items">
                                                     <Items>
-                                                        <dx:NavBarItem Text="Domov">
+                                                        <dx:NavBarItem Text="Domov" NavigateUrl="../Home.aspx">
                                                         </dx:NavBarItem>
-                                                        <dx:NavBarItem Text="Nov izračun">
+                                                        <dx:NavBarItem Text="Nov izračun" NavigateUrl="../CalculateSlugsForm.aspx">
                                                         </dx:NavBarItem>
                                                         <dx:NavBarItem Text="Pregled izračunov" NavigateUrl="../SlugsTable.aspx">
                                                         </dx:NavBarItem>
@@ -111,8 +111,7 @@
                                     <div class="row mb-lg-5 mt-5 sign-out-btn m-0 justify-content-center">
                                         <div class="col-10 p-0 text-center">
                                             <dx:ASPxButton ID="btnSignOut" Width="60%" runat="server" RenderMode="Link" AutoPostBack="false" Text="ODJAVI SE"
-                                                CssClass="menu-action-button" OnClick="btnSignOut_Click" ForeColor="#F7F9FF">
-                                                <HoverStyle CssClass="menu-action-button-hover" />
+                                                OnClick="btnSignOut_Click" ForeColor="Black">
                                             </dx:ASPxButton>
                                         </div>
                                     </div>

@@ -8,9 +8,11 @@ namespace SlugsLib
 {
     public class CoordinateSystem
     {
-        const int xCoorFactor = 10;
-        const int yCoorFactor = 10;
+        const int xCoorFactor = 1;
+        const int yCoorFactor = 1;
         private List<Coordinate> coordinates;
+        int xCoorMax;
+        int yCoorMax;
         public CoordinateSystem()
         { }
 
@@ -22,16 +24,16 @@ namespace SlugsLib
         public void GenerateCoordinateSystem(int width, int height)
         {
             //širino in dolžino traka pomnožimo z fakrotjem da na koordinatnem sistemu dobimo več razdelkov.
-            int xCoorMax = (width * xCoorFactor);
-            int yCoorMax = (height * yCoorFactor);
+            xCoorMax = (width * xCoorFactor);
+            yCoorMax = (height * yCoorFactor);
 
             //generiramo koordinatni sistem ki bo imel enako število koordinat na x in y osi.
-            if (xCoorMax > yCoorMax)
+            /*if (xCoorMax > yCoorMax)
                 GenerateCoordinates(xCoorMax);
             else if (xCoorMax < yCoorMax)
                 GenerateCoordinates(yCoorMax);
             else
-                GenerateCoordinates(xCoorMax);
+                GenerateCoordinates(xCoorMax);*/
         }
 
         private void GenerateCoordinates(int maxCoor)
@@ -63,8 +65,8 @@ namespace SlugsLib
         {
             //poizkušamo dobiti dve celici na polovico rondelice (4 celice na celotno rondelico)
             decimal squareCellSize = circleRadious;
-            int cellCountX = Convert.ToInt32(squareCellSize * width);
-            int cellCountY = Convert.ToInt32(squareCellSize * height);
+            int cellCountX = Convert.ToInt32(width / squareCellSize);
+            int cellCountY = Convert.ToInt32(height / squareCellSize);
             List<Cell> listOfCells = new List<Cell>();
             Cell cell = null;
             for (int i = 0; i < cellCountX; i++)
@@ -118,27 +120,27 @@ namespace SlugsLib
 
         public int GetMaxCoordinateX
         {
-            get { return coordinates.Max(c => c.X); }
+            get { return xCoorMax; }
         }
 
         public int GetMaxCoordinateY
         {
-            get { return coordinates.Max(c => c.Y); }
+            get { return yCoorMax; }
         }
 
         public int GetMinCoordinateX
         {
-            get { return coordinates.Min(c => c.X); }
+            get { return 0; }
         }
 
         public int GetMinCoordinateY
         {
-            get { return coordinates.Min(c => c.Y); }
+            get { return 0; }
         }
 
         public void ClearCoordinates()
         {
-            if(coordinates != null)
+            if (coordinates != null)
                 coordinates.Clear();
         }
     }

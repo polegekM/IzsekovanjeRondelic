@@ -1,4 +1,21 @@
-﻿InputFieldsValidation = function (gridLookupItems, inputFields, dateFields, memoFields, comboBoxItems, tokenBoxItems) {
+﻿function isNumberKey_int(s, e) {
+    var charCode = e.htmlEvent.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57))
+        ASPxClientUtils.PreventEvent(e.htmlEvent);
+
+    return true;
+}
+
+function isNumberKey_decimal(s, e) {
+    var charCode = e.htmlEvent.keyCode;
+    if (charCode != 44 && charCode != 46 && charCode > 31
+        && (charCode < 48 || charCode > 57))
+        ASPxClientUtils.PreventEvent(e.htmlEvent);
+
+    return true;
+}
+
+InputFieldsValidation = function (gridLookupItems, inputFields, dateFields, memoFields, comboBoxItems, tokenBoxItems) {
     var procees = true;
 
     if (gridLookupItems != null) {

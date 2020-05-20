@@ -28,7 +28,7 @@ namespace WebAPI.Domain.Concrete
 
             if (user != null)
             {
-                if (String.Compare(user.username, username, false) != 0 && String.Compare(CommonMethods.Base64Decode(user.password), password) != 0)
+                if (String.Compare(user.username, username, false) != 0 || String.Compare(CommonMethods.Base64Decode(user.password), decodedPass) != 0)
                     throw new UserCredentialsException(ExceptionsRes.res_01);
 
                 model = new UserModel();

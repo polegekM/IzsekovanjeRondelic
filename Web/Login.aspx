@@ -26,8 +26,7 @@
             }
         }
 
-        function LoginCallback_EndCallback(s, e)
-        {
+        function LoginCallback_EndCallback(s, e) {
             LoadingPanel.Hide();
 
             txtUsername.SetText("");
@@ -68,7 +67,7 @@
                     <dx:ASPxTextBox ID="txtUsername" runat="server" Width="100%" ClientInstanceName="txtUsername"
                         CssClass="text-box-input" Font-Size="14px" AutoCompleteType="Disabled">
                         <FocusedStyle CssClass="focus-text-box-input"></FocusedStyle>
-                        <ClientSideEvents  GotFocus="ClearText" />
+                        <ClientSideEvents GotFocus="ClearText" />
                         <Paddings Padding="10" />
                     </dx:ASPxTextBox>
                 </div>
@@ -79,16 +78,21 @@
                     <dx:ASPxTextBox ID="txtPassword" runat="server" Width="100%" ClientInstanceName="txtPassword"
                         CssClass="text-box-input" Font-Size="14px" AutoCompleteType="Disabled" Password="true">
                         <FocusedStyle CssClass="focus-text-box-input"></FocusedStyle>
-                        <ClientSideEvents  GotFocus="ClearText" />
+                        <ClientSideEvents GotFocus="ClearText" />
                         <Paddings Padding="10" />
                     </dx:ASPxTextBox>
                 </div>
             </div>
             <div class="row mt-4 mb-2">
-                <div class="col p-0 px-3">
+                <div class="col p-0 px-3 text-right">
                     <dx:ASPxCallback ID="LoginCallback" runat="server" OnCallback="CallbackLogin_Callback" ClientInstanceName="LoginCallback">
                         <ClientSideEvents EndCallback="LoginCallback_EndCallback" />
                     </dx:ASPxCallback>
+                    <dx:ASPxButton ID="btnSignIn" runat="server" Text="Prijavi se" AutoPostBack="false"
+                        Height="25" Width="90" ClientInstanceName="btnEdit">
+                        <Paddings PaddingLeft="10" PaddingRight="10" />
+                        <ClientSideEvents Click="CauseValidation" />
+                    </dx:ASPxButton>
                 </div>
             </div>
         </div>

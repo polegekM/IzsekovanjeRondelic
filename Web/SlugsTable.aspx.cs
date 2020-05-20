@@ -14,6 +14,7 @@ namespace Web
         protected void Page_Init(object sender, EventArgs e)
         {
             Master.PageHeadlineTitle = Title;
+            GridViewSlugs.Settings.GridLines = GridLines.Both;
         }
 
         protected void Page_Load(object sender, EventArgs e)

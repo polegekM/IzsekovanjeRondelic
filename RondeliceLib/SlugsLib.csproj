@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalculateSlugs.cs" />
     <Compile Include="Cell.cs" />
     <Compile Include="Common\CommonMethods.cs" />
     <Compile Include="CoordinateSystem.cs" />

@@ -42,6 +42,20 @@ namespace Web.Infrastructure
             return user;
         }
 
+        public ResponseAPIModel<ProductModel> GetSlugsSum(int length, int width, decimal radius, decimal edgeLength, decimal edgeWidth, decimal minDistanceItem)
+        {
+            ResponseAPIModel<ProductModel> user = new ResponseAPIModel<ProductModel>();
+            try
+            {
+                user = GetResponseFromWebRequest<ResponseAPIModel<ProductModel>>(WebServiceURIHelper.GetSlugsSum(length, width, radius, edgeLength, edgeWidth, minDistanceItem), "get");
+            }
+            catch (Exception ex)
+            {
+                user.ValidationErrorAppSide = ConcatenateExceptionMessage(ex);
+            }
+            return user;
+        }
+
         private T GetResponseFromWebRequest<T>(string uri, string requestMethod)
         {
             object obj = default(T);

@@ -7,108 +7,138 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Web.MasterPage {
+namespace Web {
     
     
-    public partial class Main {
+    public partial class CalculateSlugsForm {
         
         /// <summary>
-        /// head control.
+        /// ASPxLabel2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel2;
         
         /// <summary>
-        /// form1 control.
+        /// txtLength control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::DevExpress.Web.ASPxTextBox txtLength;
         
         /// <summary>
-        /// PageHeadline control.
+        /// ASPxLabel1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxHeadline PageHeadline;
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel1;
         
         /// <summary>
-        /// nameInitial control.
+        /// txtWidth control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl nameInitial;
+        protected global::DevExpress.Web.ASPxTextBox txtWidth;
         
         /// <summary>
-        /// lblLogin control.
+        /// ASPxLabel3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel lblLogin;
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel3;
         
         /// <summary>
-        /// btnDropdownSignOut control.
+        /// txtLengthEdge control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxButton btnDropdownSignOut;
+        protected global::DevExpress.Web.ASPxTextBox txtLengthEdge;
         
         /// <summary>
-        /// ASPxPanelMenu control.
+        /// ASPxLabel4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxPanel ASPxPanelMenu;
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel4;
         
         /// <summary>
-        /// NavBarMainMenu control.
+        /// txtWidthEdge control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxNavBar NavBarMainMenu;
+        protected global::DevExpress.Web.ASPxTextBox txtWidthEdge;
         
         /// <summary>
-        /// btnSignOut control.
+        /// ASPxLabel5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxButton btnSignOut;
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel5;
         
         /// <summary>
-        /// ContentPlaceHolderMain control.
+        /// txtMinDistanceSlugs control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolderMain;
+        protected global::DevExpress.Web.ASPxTextBox txtMinDistanceSlugs;
         
         /// <summary>
-        /// LoadingPanel control.
+        /// ASPxLabel6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLoadingPanel LoadingPanel;
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel6;
+        
+        /// <summary>
+        /// txtRadius control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox txtRadius;
+        
+        /// <summary>
+        /// btnCalculate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton btnCalculate;
+        
+        /// <summary>
+        /// Master property.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated property.
+        /// </remarks>
+        public new Web.MasterPage.Main Master {
+            get {
+                return ((Web.MasterPage.Main)(base.Master));
+            }
+        }
     }
 }

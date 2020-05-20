@@ -25,7 +25,7 @@ namespace WebAPI.Domain.Concrete
                             Code = p.code,
                             EdgeLength = p.edge_length.HasValue ? p.edge_length.Value : 0,
                             EdgeWidth = p.edge_width.HasValue ? p.edge_width.Value : 0,
-                            ElapsedTime = p.elapsed_time.HasValue ? p.elapsed_time.Value : TimeSpan.MinValue,
+                            ElapsedTime = p.elapsed_time.Value,
                             InsertDate = p.ts.HasValue ? p.ts.Value : DateTime.MinValue,
                             ItemsSum = p.items_sum.HasValue ? p.items_sum.Value : 0,
                             Length = p.length.HasValue ? p.length.Value : 0,

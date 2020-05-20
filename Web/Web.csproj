@@ -71,15 +71,19 @@
     <Reference Include="DevExpress.Web.v16.1, Version=16.1.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CalculateSlugsForm.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
+    <Content Include="Images\PostavitevRondelic.png" />
     <Content Include="Login.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\Common.js" />
     <Content Include="SlugsTable.aspx" />
     <Content Include="Style\Content.css" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="MasterPage\Main.Master" />
@@ -92,6 +96,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalculateSlugsForm.aspx.cs">
+      <DependentUpon>CalculateSlugsForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CalculateSlugsForm.aspx.designer.cs">
+      <DependentUpon>CalculateSlugsForm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

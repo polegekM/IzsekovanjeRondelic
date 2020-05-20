@@ -41,6 +41,7 @@ namespace SlugsLib
 
             int centerCellCoorX = Convert.ToInt32((circleRadious * coorSys.GetxCoorFactor));
             int centerCellCoorY = Convert.ToInt32((circleRadious * coorSys.GetyCoorFactor));
+
             firstCircleCell = generatedCells.Where(c => c.listOfPoints
                 .Any(ce => ce.cellPointCoor.X == centerCellCoorX && ce.cellPointCoor.Y == centerCellCoorY))
                 .FirstOrDefault();
@@ -50,7 +51,6 @@ namespace SlugsLib
                 firstCircleCell.isOccupied = true;
 
                 CellPoint centerCirclePoint = firstCircleCell.listOfPoints.Where(cc => cc.cellPointCoor.X == centerCellCoorX && cc.cellPointCoor.Y == centerCellCoorY).FirstOrDefault();
-                centerCirclePoints.Add(centerCirclePoint);
 
                 return centerCirclePoint;
             }
@@ -176,6 +176,8 @@ namespace SlugsLib
                         return true;
                     else if (coor.Y < minY)
                         return true;
+
+                    //circleCell.isOccupied = true;
                 }
                 else
                     return true;

@@ -46,5 +46,10 @@ namespace Web.Infrastructure
         {
             return WebServiceProductURL + "SaveProduct";
         }
+
+        public static string GetSlugsSum(int length, int width, decimal radius, decimal edgeLength, decimal edgeWidth, decimal minDistanceItem)
+        {
+            return WebServiceProductURL + "GetSlugsSum?length=" + length + "&width=" + width + "&radius=" + radius + "&edgeLength=" + edgeLength + "&edgeWidth=" + edgeWidth + "&minDistanceItem=" + minDistanceItem;
+        }
     }
 }

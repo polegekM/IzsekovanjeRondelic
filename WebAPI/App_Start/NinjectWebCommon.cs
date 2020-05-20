@@ -68,6 +68,7 @@ namespace WebAPI.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<IUserRepository>().To<UserRepository>();
+            kernel.Bind<IProductRepository>().To<ProductRepository>();
         }
     }
 }

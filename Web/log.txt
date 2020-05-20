@@ -1,1 +1,22 @@
 20. 05. 2020 00:16:42 The remote server returned an error: (500) Internal Server Error. System
+20. 05. 2020 08:02:11 The remote server returned an error: (500) Internal Server Error. System
+20. 05. 2020 09:44:32 The remote server returned an error: (500) Internal Server Error. System
+20. 05. 2020 09:46:05 The remote server returned an error: (500) Internal Server Error. System
+20. 05. 2020 09:49:35 The remote server returned an error: (500) Internal Server Error. System
+20. 05. 2020 10:08:49 The remote server returned an error: (500) Internal Server Error. System
+20. 05. 2020 10:22:09 The remote server returned an error: (500) Internal Server Error. System
+20. 05. 2020 10:23:18 The remote server returned an error: (500) Internal Server Error. System
+20. 05. 2020 10:44:49 The remote server returned an error: (500) Internal Server Error. System
+20. 05. 2020 10:44:55 The remote server returned an error: (500) Internal Server Error. System
+20. 05. 2020 10:45:13 The remote server returned an error: (500) Internal Server Error. System
+20. 05. 2020 10:45:16 The remote server returned an error: (500) Internal Server Error. System
+20. 05. 2020 23:11:27 The remote server returned an error: (500) Internal Server Error. System
+20. 05. 2020 23:11:27 The remote server returned an error: (500) Internal Server Error. System
+20. 05. 2020 23:13:57 The remote server returned an error: (500) Internal Server Error. System
+20. 05. 2020 23:13:57 The remote server returned an error: (500) Internal Server Error. System
+20. 05. 2020 23:14:26 The remote server returned an error: (500) Internal Server Error. System
+20. 05. 2020 23:14:26 The remote server returned an error: (500) Internal Server Error. System
+20. 05. 2020 23:21:00 An error occurred while executing the command definition. See the inner exception for details.The duration cannot be returned for TimeSpan.MinValue because the absolute value of TimeSpan.MinValue exceeds the value of TimeSpan.MaxValue.
+20. 05. 2020 23:21:04 An error occurred while executing the command definition. See the inner exception for details.The duration cannot be returned for TimeSpan.MinValue because the absolute value of TimeSpan.MinValue exceeds the value of TimeSpan.MaxValue.
+20. 05. 2020 23:40:57 The operation has timed out System
+20. 05. 2020 23:49:05 The request was aborted: The operation has timed out. System
