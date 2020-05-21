@@ -24,14 +24,14 @@ namespace Web.Infrastructure
             Response.Redirect("~/Login.aspx");
         }
 
+        protected void ShowModal(string title, string message, bool yesNo)
+        {
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "Common", String.Format("ShowModal('{0}', '{1}', {2});", title, message, (yesNo ? "1" : "0")), true);
+        }
+
         protected DatabaseConnection GetDatabaseConnection()
         {
-            DatabaseConnection dbConnection = null;
-
-            if (dbConnection == null)
-                return new DatabaseConnection();
-
-            return dbConnection;
+            return new DatabaseConnection();
         }
 
         protected T CheckModelValidation<T>(ResponseAPIModel<T> instance)
@@ -53,7 +53,7 @@ namespace Web.Infrastructure
                     requestFailedError = instance.ValidationErrorAppSide.Replace("\r\n", "");
 
                 CommonMethods.LogThis(requestFailedError);
-                //ShowModal("Napaka!", requestFailedError, false);
+                ShowModal("Napaka!", requestFailedError, false);
 
                 return (T)obj;
             }

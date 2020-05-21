@@ -44,7 +44,7 @@ namespace WebAPI.Domain.Concrete
                                     }).FirstOrDefault(),
                         };
 
-            return query.ToList();
+            return query.OrderByDescending(o=>o.ProductId).ToList();
         }
 
         public int SaveProduct(ProductModel model)

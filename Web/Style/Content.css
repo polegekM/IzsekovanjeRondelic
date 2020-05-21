@@ -119,3 +119,19 @@ page-headline {
     margin-bottom: 0 !important;
 }
 
+.dxnb-link:hover, #dropdownMenuLink:hover {
+    text-decoration: none !important;
+}
+
+.btn-signout {
+    padding: 6px 0px !important;
+    border: 1px solid black !important;
+    border-radius: 15px !important;
+    text-decoration: none !important;
+}
+
+    .btn-signout:hover {
+        color: white !important;
+        background-color: #007bff !important;
+        border-color: transparent !important;
+    }

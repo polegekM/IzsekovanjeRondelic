@@ -19,6 +19,8 @@ namespace SlugsLib
         Cell firstCircleCell;
         List<double> degrees;
         List<CellPoint> centerCirclePoints;
+        List<Cell> occupiedCellsForNextSlug;
+
         public PlaneTape(int width, int height)
         {
             tapeWidth = width;
@@ -30,6 +32,8 @@ namespace SlugsLib
 
             degrees = new List<double> { 0, 45, 90, 135, 180, 225, 270, 315 };
             centerCirclePoints = new List<CellPoint>();
+
+            occupiedCellsForNextSlug = new List<Cell>();
         }
         /// <summary>
         /// Inicializiramo prvi krog na traku.
@@ -122,6 +126,7 @@ namespace SlugsLib
 
                 if (cellNewCircle != null)
                 {
+                    occupiedCellsForNextSlug.Clear();
                     //najdemo koordinate nove točke
                     circleCenter = cellNewCircle.listOfPoints.Where(cc => cc.cellPointCoor.X == coor.X && cc.cellPointCoor.Y == coor.Y).FirstOrDefault();
 
@@ -131,6 +136,7 @@ namespace SlugsLib
                     if (!isCircleInCollision && !cellNewCircle.isOccupied)
                     {
                         cellNewCircle.isOccupied = true;
+                        occupiedCellsForNextSlug.ForEach(c => c.isOccupied = true);
                         return circleCenter;
                     }
                 }
@@ -166,18 +172,26 @@ namespace SlugsLib
 
                     if (circleCell == null)
                         return true;
-                    else if (circleCell.isOccupied)
-                        return true;
-                    else if (coor.X > maxX)
-                        return true;
-                    else if (coor.X < minX)
-                        return true;
-                    else if (coor.Y > maxY)
-                        return true;
-                    else if (coor.Y < minY)
-                        return true;
+                    else
+                    {
+                        //če še ta celica ne obstaja v seznamu v katerm leži krožnica
+                        if (!occupiedCellsForNextSlug.Exists(c => c.startCoordinate.X == circleCell.startCoordinate.X && c.startCoordinate.Y == circleCell.startCoordinate.Y) &&
+                            !occupiedCellsForNextSlug.Exists(c => c.startCoordinate.X == coor.X && c.startCoordinate.Y == coor.Y))
+                        {
+                            if (circleCell.isOccupied)
+                                return true;
+                            else if (coor.X > maxX)
+                                return true;
+                            else if (coor.X < minX)
+                                return true;
+                            else if (coor.Y > maxY)
+                                return true;
+                            else if (coor.Y < minY)
+                                return true;
 
-                    //circleCell.isOccupied = true;
+                            occupiedCellsForNextSlug.Add(circleCell);
+                        }
+                    }
                 }
                 else
                     return true;

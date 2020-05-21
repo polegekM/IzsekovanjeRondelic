@@ -1,24 +1,32 @@
 ﻿<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <h1 style="font-size:42px;">Izsekovanje rondelic WebAPI</h1>
+    <p class="lead">REST storitev za izračunavanje rondelic, prijavljanje uporabnikov in shranjevanje podatkov v podatkovno zbirko. Spodaj se nahaja seznam klicev.</p>
+    <p><a href="#apicalls" class="btn btn-primary btn-lg">Preveri &raquo;</a></p>
+</div>
+<div class="row" id="apicalls">
+    <div class="col-md-4">
+        <h3>/LogIn <span class="badge">get</span></h3>
+        <p class="text-muted">Metoda za prijavo uporabnika v aplikacijo</p>
+        <p>Podatke ki jih je uporabnik vnesel v prijavno okno s pomočjo te metode preverimo če se ujemajo z podatki ki jih imamo shranjne v podatkovni bazi v tabeli user</p>
+        <p><a class="btn btn-default" href="api/user/LogIn?username=test&password=test">Preveri &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h3>/GetProducts <span class="badge">get</span></h3>
+        <p class="text-muted">Metoda za pridobivanje zapisov o izračunih izsekanih rondelic</p>
+        <p>V seznam naložimo vse zapise ki jih imamo v tabeli product in jih vrnemo kot rezultat metode</p>
+        <p><a class="btn btn-default" href="api/product/GetProducts">Preveri &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h3>/SaveProduct <span class="badge">post</span></h3>
+        <p class="text-muted">Shranimo podatke ki smo jih pridobili ob izračunu.</p>
+        <p>Shranimo nove oz. posodobimo obstoječe podatke v podatkovni bazi v tabeli product</p>
+    </div>
 </div>
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>ASP.NET Web API is a framework that makes it easy to build HTTP services that reach
-        a broad range of clients, including browsers and mobile devices. ASP.NET Web API
-        is an ideal platform for building RESTful applications on the .NET Framework.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301870">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301871">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301872">Learn more &raquo;</a></p>
+        <h3>/GetSlugsSum <span class="badge">get</span></h3>
+        <p class="text-muted">Izračunamo vsoto rondelic na podlagi vhodnih parametrov</p>
+        <p>Na podlagi argumentov se izračuna vsota rondelic in nato se rezultat in ostali podatki shranijo v podatkovno bazo v tabelo product</p>
+        <p class="hidden"><a class="btn btn-default" href="api/product/GetProducts">Preveri &raquo;</a></p>
     </div>
 </div>

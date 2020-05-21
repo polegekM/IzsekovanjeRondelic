@@ -4,15 +4,28 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
+        var showConfirmationDialog = true;
+        $(document).ready(function () {
+            $("#confirmProcess").on("click", function () {
+                showConfirmationDialog = false;
+                btnCalculate.DoClick();
+            });
+        });
+
         function CauseValidation(s, e) {
             var process = false;
             var inputItems = [txtLength, txtWidth, txtLengthEdge, txtWidthEdge, txtMinDistanceSlugs, txtRadius];
 
             process = InputFieldsValidation(null, inputItems, null, null);
 
-            if (process) {
+            if (process && !showConfirmationDialog) {
+                $("#confirmModal").modal("hide");
                 LoadingPanel.Show();
                 e.processOnServer = true;
+            }
+            else if (process && showConfirmationDialog) {
+                $("#confirmModal").modal("show");
+                e.processOnServer = false;
             }
             else
                 e.processOnServer = false;
@@ -124,7 +137,7 @@
                     <div class="row m-0 pb-3 pt-3">
                         <div class="col text-center">
                             <dx:ASPxButton ID="btnCalculate" runat="server" Text="Izračunaj število rondelic" AutoPostBack="false"
-                                Height="25" Width="90" ClientInstanceName="btnEdit" OnClick="btnCalculate_Click">
+                                Height="25" Width="90" ClientInstanceName="btnCalculate" OnClick="btnCalculate_Click">
                                 <Paddings PaddingLeft="10" PaddingRight="10" />
                                 <ClientSideEvents Click="CauseValidation" />
                             </dx:ASPxButton>
@@ -138,6 +151,27 @@
                 </div>
             </div>
 
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Obsežen proces</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Proces izračunavanja števila rondelic na traku lahko traja tudi več minut. Ali želite nadaljevati?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Prekliči</button>
+                    <button type="button" id="confirmProcess" class="btn btn-primary">Da, želim</button>
+                </div>
+            </div>
         </div>
     </div>
 </asp:Content>

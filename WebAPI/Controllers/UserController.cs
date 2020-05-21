@@ -37,12 +37,14 @@ namespace WebAPI.Controllers
             {
                 response.IsRequestSuccesful = false;
                 response.ValidationError = ExceptionValidationHelper.GetExceptionSource(uex);
+                CommonMethods.LogThis(response.ValidationError);
                 return Json(response);
             }
             catch (Exception ex)
             {
                 response.IsRequestSuccesful = false;
                 response.ValidationError = ExceptionValidationHelper.GetExceptionSource(ex);
+                CommonMethods.LogThis(response.ValidationError);
                 return Json(response);
             }
 

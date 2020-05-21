@@ -23,7 +23,7 @@ namespace Web
 
         protected void btnCalculate_Click(object sender, EventArgs e)
         {
-            CheckModelValidation(GetDatabaseConnection().GetSlugsSum(
+            var model = CheckModelValidation(GetDatabaseConnection().GetSlugsSum(
                 CommonMethods.ParseInt(txtLength.Text),
                 CommonMethods.ParseInt(txtWidth.Text),
                 CommonMethods.ParseDecimal(txtRadius.Text),
@@ -31,7 +31,8 @@ namespace Web
                 CommonMethods.ParseDecimal(txtWidthEdge.Text),
                 CommonMethods.ParseDecimal(txtMinDistanceSlugs.Text)));
 
-            Response.Redirect("SlugsTable.aspx");
+            if (model != null)
+                Response.Redirect("SlugsTable.aspx");
         }
     }
 }

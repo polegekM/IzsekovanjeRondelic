@@ -97,3 +97,17 @@ InputFieldsValidation = function (gridLookupItems, inputFields, dateFields, memo
 
     return procees;
 };
+
+ShowModal = function (title, message, yeNoModal) {
+    $('#infoModalTitle').empty();
+    $('#infoModalTitle').append(title);
+
+    $('#infoModalMessage').empty();
+    $('#infoModalMessage').append(message);
+
+    yeNoModal = (yeNoModal == '1' ? true : false);
+    if (yeNoModal)
+        $('#questionModal').modal("show");
+    else
+        $('#infoModal').modal("show");
+}

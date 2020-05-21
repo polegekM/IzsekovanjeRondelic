@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using SlugsLib;
+using SlugsLib.Common;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -41,6 +42,7 @@ namespace WebAPI.Controllers
             {
                 response.IsRequestSuccesful = false;
                 response.ValidationError = ExceptionValidationHelper.GetExceptionSource(ex);
+                UtilityLib.Helpers.CommonMethods.LogThis(response.ValidationError);
                 return Json(response);
             }
 
@@ -71,6 +73,7 @@ namespace WebAPI.Controllers
             {
                 model.IsRequestSuccesful = false;
                 model.ValidationError = ExceptionValidationHelper.GetExceptionSource(ex);
+                UtilityLib.Helpers.CommonMethods.LogThis(model.ValidationError);
                 return Json(model);
             }
 
@@ -78,42 +81,52 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet]
-        public IHttpActionResult GetSlugsSum(int length, int width, decimal radius, decimal edgeLength, decimal edgeWidth, decimal minDistanceItem)
+        public IHttpActionResult GetSlugsSum(decimal length, decimal width, decimal radius, decimal edgeLength, decimal edgeWidth, decimal minDistanceItem)
         {
             ResponseAPIModel<ProductModel> response = new ResponseAPIModel<ProductModel>();
             try
             {
-                int userID = CommonMethods.ParseInt(Request.Headers.Where(h => h.Key == Enums.RequestHeader.UserToken.ToString()).FirstOrDefault().Value.FirstOrDefault());
+                int userID = UtilityLib.Helpers.CommonMethods.ParseInt(Request.Headers.Where(h => h.Key == Enums.RequestHeader.UserToken.ToString()).FirstOrDefault().Value.FirstOrDefault());
+                if (userID > 0)
+                {
+                    CalculateSlugs calcSlugs = new CalculateSlugs(length, width, radius, edgeLength, edgeWidth, minDistanceItem);
 
-                CalculateSlugs calcSlugs = new CalculateSlugs(length, width, radius, edgeLength, edgeWidth, minDistanceItem);
+                    Stopwatch timer = new Stopwatch();
+                    timer.Start();
 
-                Stopwatch timer = new Stopwatch();
-                timer.Start();
+                    ProductModel model = new ProductModel();
+                    model.ProductId = 0;
+                    model.UserId = userID;
+                    model.Name = "Izračun rondelic dne, " + DateTime.Now.ToString("dd. MMMM yyyy");
+                    model.EdgeLength = edgeLength;
+                    model.EdgeWidth = edgeWidth;
+                    model.Length = length;
+                    model.MinDistanceItem = minDistanceItem;
+                    model.Radius = radius;
+                    model.Width = width;
 
-                ProductModel model = new ProductModel();
-                model.ProductId = 0;
-                model.UserId = userID;
-                model.Name = "Izračun rondelic dne, " + DateTime.Now.ToString("dd. MMMM yyyy");
-                model.EdgeLength = edgeLength;
-                model.EdgeWidth = edgeWidth;
-                model.Length = length;
-                model.MinDistanceItem = minDistanceItem;
-                model.Radius = radius;
-                model.Width = width;
+                    model.ItemsSum = calcSlugs.CalculateSum();
+                    timer.Stop();
+                    model.ElapsedTime = timer.Elapsed;
 
-                model.ItemsSum = calcSlugs.CalculateSum();
-                timer.Stop();
-                model.ElapsedTime = timer.Elapsed;
-
-                model.ProductId = productRepo.SaveProduct(model);
-                response.Content = model;
-                response.IsRequestSuccesful = true;
-                response.ValidationError = "";
+                    model.ProductId = productRepo.SaveProduct(model);
+                    response.Content = model;
+                    response.IsRequestSuccesful = true;
+                    response.ValidationError = "";
+                }
+            }
+            catch (ArgumentValidationException arg)
+            {
+                response.IsRequestSuccesful = false;
+                response.ValidationError = ExceptionValidationHelper.GetExceptionSource(arg);
+                UtilityLib.Helpers.CommonMethods.LogThis(response.ValidationError);
+                return Json(response);
             }
             catch (Exception ex)
             {
                 response.IsRequestSuccesful = false;
                 response.ValidationError = ExceptionValidationHelper.GetExceptionSource(ex);
+                UtilityLib.Helpers.CommonMethods.LogThis(response.ValidationError);
                 return Json(response);
             }
 

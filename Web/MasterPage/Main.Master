@@ -111,7 +111,7 @@
                                     <div class="row mb-lg-5 mt-5 sign-out-btn m-0 justify-content-center">
                                         <div class="col-10 p-0 text-center">
                                             <dx:ASPxButton ID="btnSignOut" Width="60%" runat="server" RenderMode="Link" AutoPostBack="false" Text="ODJAVI SE"
-                                                OnClick="btnSignOut_Click" ForeColor="Black">
+                                                OnClick="btnSignOut_Click" ForeColor="Black" CssClass="btn-signout" Font-Size="Small">
                                             </dx:ASPxButton>
                                         </div>
                                     </div>

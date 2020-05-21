@@ -1,0 +1,14 @@
+21. 05. 2020 23:58:56 Širina ne sme presegati dolžine
+
+21. 05. 2020 23:59:43 Širina ne sme presegati dolžine
+
+22. 05. 2020 00:01:09 Širina ne sme presegati dolžine
+
+22. 05. 2020 00:01:49 Rob ob dolžini ne sme presegati same dolžine traku
+
+22. 05. 2020 00:06:56 Premer rondelice ne sme presegati širino traku
+
+22. 05. 2020 00:08:01 Premer rondelice ne sme presegati širino traku
+
+22. 05. 2020 00:08:30 Premer rondelice ne sme presegati širino traku
+

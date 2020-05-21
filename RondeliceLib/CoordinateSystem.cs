@@ -26,34 +26,8 @@ namespace SlugsLib
             //širino in dolžino traka pomnožimo z fakrotjem da na koordinatnem sistemu dobimo več razdelkov.
             xCoorMax = (width * xCoorFactor);
             yCoorMax = (height * yCoorFactor);
-
-            //generiramo koordinatni sistem ki bo imel enako število koordinat na x in y osi.
-            /*if (xCoorMax > yCoorMax)
-                GenerateCoordinates(xCoorMax);
-            else if (xCoorMax < yCoorMax)
-                GenerateCoordinates(yCoorMax);
-            else
-                GenerateCoordinates(xCoorMax);*/
         }
 
-        private void GenerateCoordinates(int maxCoor)
-        {
-            coordinates = new List<Coordinate>();
-            Coordinate coor = null;
-
-            for (int i = 0; i <= maxCoor; i++)
-            {
-                for (int j = 0; j <= maxCoor; j++)
-                {
-                    coor = new Coordinate();
-
-                    coor.X = i;
-                    coor.Y = j;
-
-                    coordinates.Add(coor);
-                }
-            }
-        }
         /// <summary>
         /// Za lažje vmeščanje rondelic na trak se uporabijo celice v katerih je seznam točk s pomočjo katerih lažje določamo nove središčne točke
         /// </summary>
@@ -92,9 +66,9 @@ namespace SlugsLib
             List<CellPoint> cellPoints = new List<CellPoint>();
             CellPoint point = null;
 
-            for (int i = 0; i < pointsCountX; i++)
+            for (int i = 0; i <= pointsCountX; i++)
             {
-                for (int j = 0; j < pointsCountY; j++)
+                for (int j = 0; j <= pointsCountY; j++)
                 {
                     point = new CellPoint();
                     //pridobimo začetno koordinato celice in prištevamo nove koordinate trenutni točki na podlagi spremenljivk v zanki.

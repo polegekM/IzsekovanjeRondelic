@@ -20,3 +20,10 @@
 20. 05. 2020 23:21:04 An error occurred while executing the command definition. See the inner exception for details.The duration cannot be returned for TimeSpan.MinValue because the absolute value of TimeSpan.MinValue exceeds the value of TimeSpan.MaxValue.
 20. 05. 2020 23:40:57 The operation has timed out System
 20. 05. 2020 23:49:05 The request was aborted: The operation has timed out. System
+21. 05. 2020 23:58:56 Širina ne sme presegati dolžine
+21. 05. 2020 23:59:53 Širina ne sme presegati dolžine
+22. 05. 2020 00:01:09 Širina ne sme presegati dolžine
+22. 05. 2020 00:01:49 Rob ob dolžini ne sme presegati same dolžine traku
+22. 05. 2020 00:06:56 Premer rondelice ne sme presegati širino traku
+22. 05. 2020 00:08:01 Premer rondelice ne sme presegati širino traku
+22. 05. 2020 00:08:30 Premer rondelice ne sme presegati širino traku
